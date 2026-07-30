@@ -1,0 +1,149 @@
+ASHER PORTAL PROPRIETARY SOURCE LICENSE
+Version 1.0 — July 2026
+
+Copyright © 2026 Asher Menachem.
+All rights reserved.
+
+1. OWNERSHIP
+
+Asher Portal, including its original source code, user interface,
+visual identity, branding, documentation, architecture, designs,
+graphics, icons, and other original materials contained in this
+repository (collectively, the "Software"), is owned by Asher Menachem
+and is protected by applicable copyright, trademark, and other
+intellectual property laws.
+
+The publication of the Software in a public repository does not place
+the Software in the public domain and does not make the Software open
+source.
+
+2. PERMITTED USE OF OFFICIAL RELEASES
+
+You may download, install, and use official, unmodified Asher Portal
+application releases distributed directly by Asher Menachem through the
+official Asher Portal GitHub repository for personal, non-commercial use.
+
+This permission applies only to official compiled releases. It does not
+grant permission to copy, modify, redistribute, publish, sublicense,
+reverse engineer except where applicable law expressly permits it,
+rebrand, commercialize, or create derivative products from the Software.
+
+3. LIMITED PERMISSION TO VIEW SOURCE CODE
+
+You may view the source code solely for personal evaluation,
+educational review, and security inspection.
+
+Viewing the source code does not grant permission to use it in another
+project, reproduce it, modify it, distribute it, publish it, or create a
+derivative work.
+
+4. PROHIBITED USES
+
+Unless you receive prior express written permission from Asher Menachem,
+you may not, in whole or in part:
+
+a. copy, reproduce, download, redistribute, publish, or transmit the
+   Software, except as technically necessary to view it through GitHub;
+
+b. modify, adapt, translate, alter, transform, or create derivative
+   works based upon the Software;
+
+c. use the Software or any substantial portion of it to create another
+   terminal, browser, webpage viewer, application, product, service,
+   library, template, tutorial project, or commercial offering;
+
+d. rename, rebrand, reskin, relabel, or present the Software under a
+   different product, project, company, developer, or author name;
+
+e. sell, sublicense, rent, lease, monetize, commercialize, host, or
+   distribute the Software;
+
+f. remove, obscure, replace, or alter any copyright notice, attribution,
+   product name, author name, branding, license notice, or proprietary
+   notice;
+
+g. claim ownership, authorship, invention, or original creation of the
+   Software or any derivative or substantially similar implementation;
+
+h. use modified, rewritten, rearranged, translated, or partially copied
+   portions of the Software in an attempt to avoid the restrictions of
+   this License;
+
+i. use the Software to train, fine-tune, evaluate, or develop an
+   artificial intelligence or machine-learning model or dataset; or
+
+j. assist another person or entity in performing any prohibited act.
+
+Providing attribution or credit does not by itself grant permission to
+copy, modify, distribute, publish, rebrand, or use the Software.
+
+5. GITHUB FORKS
+
+GitHub may permit users to view or fork public repositories through
+functionality provided by GitHub.
+
+Any such fork remains subject to this License. Forking the repository
+does not grant permission to modify, redistribute, deploy, commercialize,
+rebrand, or otherwise use the Software beyond the limited permission to
+view it.
+
+6. THIRD-PARTY COMPONENTS
+
+The Software uses third-party packages and technologies, including
+Electron, xterm.js, node-pty, and related dependencies.
+
+Those third-party components remain governed by their respective
+licenses. This License applies only to the original Asher Portal
+materials owned by Asher Menachem and does not replace or restrict the
+licenses of third-party components.
+
+7. CONTRIBUTIONS
+
+Unless a separate written agreement states otherwise, submitting code,
+documentation, designs, or other material to this repository constitutes
+an irrevocable assignment to Asher Menachem of all rights, title, and
+interest in that contribution to the maximum extent permitted by law.
+
+No contribution grants the contributor ownership of Asher Portal or a
+license to distribute a separate version.
+
+8. NO TRADEMARK LICENSE
+
+No permission is granted to use the names "Asher Portal," "Portal," the
+Asher Portal icon, associated logos, visual identity, or confusingly
+similar names or marks.
+
+9. TERMINATION
+
+Any permission granted under this License terminates automatically and
+immediately if you violate any provision.
+
+Upon termination, you must cease all use and permanently delete all
+copies, modifications, and derivative materials in your possession or
+control.
+
+10. ENFORCEMENT
+
+Unauthorized copying, modification, redistribution, publication,
+rebranding, commercialization, or creation of derivative works may
+constitute copyright infringement and may result in legal action,
+injunctive relief, monetary damages, recovery of legal costs where
+permitted, and takedown requests.
+
+11. NO WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+
+IN NO EVENT SHALL THE COPYRIGHT OWNER BE LIABLE FOR ANY CLAIM, DAMAGES,
+OR OTHER LIABILITY ARISING FROM THE SOFTWARE OR ITS USE.
+
+12. PERMISSION REQUESTS
+
+Requests for permission must be made directly to the copyright owner
+and must be approved through an express written agreement.
+
+Silence, repository access, attribution, a GitHub fork, or failure to
+enforce a prior violation does not constitute permission or a waiver of
+rights.

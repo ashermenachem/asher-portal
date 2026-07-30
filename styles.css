@@ -1,0 +1,117 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #101010;
+}
+
+body {
+  font-family:
+    Menlo,
+    Monaco,
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+}
+
+#terminal-panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #101010;
+}
+
+body.preview-open #terminal-panel {
+  top: auto;
+  height: 260px;
+  border-top: 1px solid #383838;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+}
+
+#preview-status {
+  display: none;
+  flex: 0 0 32px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+  padding: 0 10px 0 12px;
+  background: #1b1b1b;
+  border-bottom: 1px solid #333333;
+  color: #cfcfcf;
+  font-size: 11px;
+}
+
+body.preview-open #preview-status {
+  display: flex;
+}
+
+#preview-status-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#preview-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+}
+
+.preview-action-button {
+  display: grid;
+  width: 28px;
+  height: 24px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid #555555;
+  border-radius: 6px;
+  background: #292929;
+  color: #eeeeee;
+  font: inherit;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.preview-action-button:hover {
+  background: #3a3a3a;
+}
+
+#close-preview-button:hover {
+  background: #5a2929;
+}
+
+#terminal-container {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  padding: 12px;
+  background: #101010;
+}
+
+#terminal {
+  width: 100%;
+  height: 100%;
+}
+
+.xterm {
+  height: 100%;
+}
+
+.xterm-viewport {
+  overflow-y: auto !important;
+}

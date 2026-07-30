@@ -1,0 +1,70 @@
+{
+  "name": "asher-portal",
+  "version": "1.0.0",
+  "description": "A real terminal with live webpages built directly into the same window.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "build:mac": "electron-builder --mac dir --arm64",
+    "build:release:arm64": "electron-builder --mac zip --arm64",
+    "build:release:x64": "electron-builder --mac zip --x64"
+  },
+  "keywords": [],
+  "author": "Asher Menachem",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "node-pty": "^1.1.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.2.0",
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3"
+  },
+  "productName": "Asher Portal",
+  "build": {
+    "appId": "com.ashermenachem.asherportal",
+    "productName": "Asher Portal",
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/node-pty/**/*"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "identity": null,
+      "hardenedRuntime": false,
+      "target": [
+        "zip"
+      ],
+      "icon": "build/icon.icns"
+    },
+    "extraResources": [
+      {
+        "from": "bin",
+        "to": "bin",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "artifactName": "Asher-Portal-macOS-${arch}.${ext}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashermenachem/asher-portal.git"
+  },
+  "homepage": "https://github.com/ashermenachem/asher-portal",
+  "bugs": {
+    "url": "https://github.com/ashermenachem/asher-portal/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

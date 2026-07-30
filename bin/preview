@@ -1,0 +1,76 @@
+#!/usr/bin/env node
+
+const net = require("node:net");
+
+const socketPath =
+  process.env.WEB_TERMINAL_PREVIEW_SOCKET;
+
+if (!socketPath) {
+  console.error(
+    "This webpage command only works inside Asher Portal."
+  );
+
+  process.exit(1);
+}
+
+const argumentsList = process.argv.slice(2);
+
+let payload;
+
+if (
+  argumentsList.length === 1 &&
+  argumentsList[0].toLowerCase() === "close"
+) {
+  payload = {
+    action: "close"
+  };
+} else if (argumentsList.length > 0) {
+  payload = {
+    action: "open",
+    url: argumentsList.join(" ")
+  };
+} else {
+  console.log("");
+  console.log("Usage:");
+  console.log("  preview https://example.com");
+  console.log("  preview localhost:3000");
+  console.log("  preview close");
+  console.log("");
+
+  process.exit(0);
+}
+
+const client = net.createConnection(socketPath);
+
+client.setEncoding("utf8");
+
+client.setTimeout(5000);
+
+client.on("connect", () => {
+  client.write(`${JSON.stringify(payload)}\n`);
+});
+
+client.on("data", (data) => {
+  process.stdout.write(data);
+});
+
+client.on("end", () => {
+  process.exit(0);
+});
+
+client.on("timeout", () => {
+  console.error(
+    "Preview command timed out."
+  );
+
+  client.destroy();
+  process.exit(1);
+});
+
+client.on("error", (error) => {
+  console.error(
+    `Preview command failed: ${error.message}`
+  );
+
+  process.exit(1);
+});
