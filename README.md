@@ -1,14 +1,14 @@
 <div align="center">
 
-<img src="assets/hero.svg" alt="Asher Portal — a live webpage above a real terminal" width="100%">
+<img src="assets/hero-v1.1.svg" alt="Asher Portal 1.1 with search, persistent browser tabs, a live webpage, and a real terminal" width="100%">
 
 <br>
 
 # Asher Portal
 
-### **The terminal is no longer where the web stops. It is where the web opens.**
+### **A real browser and a real terminal, fused into one continuous workspace.**
 
-Type a website like a command. Asher Portal renders the live page above your real shell, keeps the terminal active underneath, and lets you jump to the next site without closing anything.
+Search the internet, open websites, keep several live tabs, and run ordinary shell commands without leaving the same window.
 
 <br>
 
@@ -22,99 +22,89 @@ Type a website like a command. Asher Portal renders the live page above your rea
 
 [**Download the latest release**](https://github.com/ashermenachem/asher-portal/releases/latest)
 &nbsp;&nbsp;•&nbsp;&nbsp;
-[**Install in one line**](#-install)
+[**Install in one line**](#install)
 &nbsp;&nbsp;•&nbsp;&nbsp;
-[**See how it works**](#-how-it-feels)
+[**Explore version 1.1**](#version-110)
 
 </div>
 
 ---
 
-## ⚡ The idea
+## Version 1.1.0
 
-A browser normally lives in a separate window. A terminal normally stops at text.
+Version 1.1 turns the original terminal preview concept into a genuine terminal-first browser.
 
-**Asher Portal removes that wall.**
+### New in this release
+
+- **A completely redesigned professional interface**
+- **Real persistent browser tabs**
+- **Internet search from the address bar or terminal**
+- **Back, forward, reload, expand, close, and external-browser controls**
+- **A live address bar with page title and URL synchronization**
+- **Independent page history and scroll position for every tab**
+- **Loading indicators, page status, app version, and architecture information**
+- **Keyboard shortcuts for new tabs, closing tabs, and focusing the address bar**
+
+<img src="assets/tabs-v1.1.svg" alt="Asher Portal browser tabs and search interface" width="100%">
+
+---
+
+## The idea
+
+A normal browser pushes the terminal into another window. A normal terminal treats everything that is not a command as an error.
+
+Asher Portal does something different.
+
+### Search from the terminal
+
+```text
+asher@Mac ~ % golden retriever training
+```
+
+That text opens as an internet search in the active browser tab.
+
+### Open a website directly
 
 ```text
 asher@Mac ~ % github.com
 ```
 
-GitHub opens in the live webpage pane.
+GitHub opens as a live webpage above the same shell.
+
+### Run a real shell command
 
 ```text
-asher@Mac ~ % youtube.com
+asher@Mac ~ % pwd
+/Users/ashermenachem
 ```
 
-The same pane moves directly to YouTube—no closing the page, no browser tab, and no `preview` prefix.
+Recognized shell commands still execute normally.
 
-```text
-asher@Mac ~ % instagram.com/ashermenachem
-```
+### Move between several live pages
 
-Paths, queries, fragments, local development URLs, and full `https://` addresses work too.
-
-> [!TIP]
-> Think of the URL as a native shell command. Type it, press Return, and the portal moves.
+Press <kbd>Command</kbd> + <kbd>T</kbd>, open another site, and switch tabs without losing the previous page, its navigation history, or its scroll position.
 
 ---
 
-## ✨ Why it feels different
+## Install
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>⌨️ URLs are commands</h3>
-      <p>Enter <code>apple.com</code>, <code>github.com/user/repo</code>, or <code>localhost:3000</code> directly into the terminal.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🌐 The webpage is real</h3>
-      <p>Pages run through Chromium with live HTML, CSS, JavaScript, animation, audio, and standard web video.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🧠 Your shell stays alive</h3>
-      <p>Your working directory, history, environment, processes, and genuine login <code>zsh</code> session remain intact.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>↗️ Continuous navigation</h3>
-      <p>Leave one website open and type another domain underneath. The same portal switches instantly.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🧪 Built for local development</h3>
-      <p>Open <code>localhost:3000</code>, <code>127.0.0.1:5173</code>, or another local server without leaving your workspace.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>📦 One-command installation</h3>
-      <p>The installer detects Apple Silicon or Intel, verifies the release checksum, installs the app, and creates the <code>portal</code> launcher.</p>
-    </td>
-  </tr>
-</table>
-
----
-
-## 🚀 Install
-
-Paste one line into the regular macOS Terminal:
+Paste this into the regular macOS Terminal:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ashermenachem/asher-portal/main/install.sh | bash
 ```
 
-That command:
+The installer automatically:
 
-- detects `arm64` or `x64`
-- downloads the correct prebuilt application
+- detects Apple Silicon or Intel
+- downloads the correct prebuilt release
 - verifies the published SHA-256 checksum
 - installs `Asher Portal.app` into `~/Applications`
-- creates the global `portal` command
+- creates the global `portal` launcher
 - adds `~/.local/bin` to your shell path when needed
 - launches Asher Portal
 
-**You do not need Node.js, npm, Electron, Xcode, Homebrew, or developer tools to install the release.**
+**Node.js, npm, Electron, Xcode, Homebrew, and developer tools are not required to install a release.**
 
 ### Launch
 
@@ -132,12 +122,8 @@ Run the same installer again:
 curl -fsSL https://raw.githubusercontent.com/ashermenachem/asher-portal/main/install.sh | bash
 ```
 
-It replaces the old application with the latest release while preserving the launcher.
-
 <details>
 <summary><strong>Inspect the installer before running it</strong></summary>
-
-Executing a remote shell script requires trust. Download and inspect it first:
 
 ```bash
 curl -fsSL \
@@ -155,68 +141,168 @@ bash asher-portal-install.sh
 
 ---
 
-## 🎬 How it feels
+## Search or navigate
 
-Start the app:
+The top address bar behaves like a modern browser omnibox.
 
-```bash
-portal
-```
-
-Then use the terminal naturally:
+### Search
 
 ```text
-github.com
-youtube.com
+dogs
+```
+
+```text
+best restaurants in Los Angeles
+```
+
+```text
+how to center a div
+```
+
+Text that does not look like a web address becomes a Google search.
+
+### Domains and paths
+
+```text
+apple.com
+```
+
+```text
+github.com/ashermenachem/asher-portal
+```
+
+```text
 instagram.com/ashermenachem
+```
+
+### Local development
+
+```text
 localhost:3000
+```
+
+```text
+127.0.0.1:5173
+```
+
+### Full URLs
+
+```text
 https://example.com/path?mode=portal#section
 ```
 
-| What you do | What Asher Portal does |
-|---|---|
-| Type a domain | Opens it in the webpage pane |
-| Type another domain while a page is open | Reuses the same pane and navigates immediately |
-| Type a path, query, or fragment | Opens the exact destination |
-| Run a normal shell command | Sends it to the real `zsh` session |
-| Close the webpage | Expands the terminal without resetting it |
-| Expand the webpage | Temporarily gives the site the full window |
-| Press <kbd>Esc</kbd> | Returns from full-page mode to split view |
+---
 
-### Keyboard and window controls
+## Tabs
+
+Every tab owns its own live `WebContentsView`.
+
+That means each tab preserves:
+
+- its current page
+- navigation history
+- page title
+- loading state
+- scroll position
+- in-page state that remains active while the tab exists
+
+Links that request a new browser window open as a new Asher Portal tab.
+
+### Tab controls
 
 | Action | Control |
 |---|---|
-| Open or switch websites | Type the address and press Return |
-| Expand the webpage | Click `⤢` or press <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> |
-| Restore split view | Press <kbd>Esc</kbd> |
-| Close the webpage pane | Click `×` or press <kbd>Command</kbd> + <kbd>W</kbd> |
-| Quit Asher Portal | Press <kbd>Command</kbd> + <kbd>Q</kbd> |
+| Create a new tab | <kbd>Command</kbd> + <kbd>T</kbd> or click `+` |
+| Close the active tab | <kbd>Command</kbd> + <kbd>W</kbd> |
+| Close a specific tab | Click its `×` button |
+| Switch tabs | Click a tab |
+| Focus the address bar | <kbd>Command</kbd> + <kbd>L</kbd> |
+| Search or navigate | Enter text and press Return |
 
 ---
 
-## 🧬 Under the surface
+## Browser controls
+
+| Action | Control |
+|---|---|
+| Go back | Back arrow |
+| Go forward | Forward arrow |
+| Reload | Reload button |
+| Open in the default browser | External-link button |
+| Expand the webpage | Expand button or <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> |
+| Restore split view | <kbd>Esc</kbd> |
+| Close the active portal tab | Close button or <kbd>Command</kbd> + <kbd>W</kbd> |
+| Quit Asher Portal | <kbd>Command</kbd> + <kbd>Q</kbd> |
+
+---
+
+## Why it feels different
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Real terminal</h3>
+      <p>A genuine login <code>zsh</code> session connected through a pseudoterminal—not a simulated command box.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Real browser tabs</h3>
+      <p>Each tab has its own Chromium webpage surface, navigation stack, and persistent page state.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Search is native</h3>
+      <p>Type a normal search phrase into the terminal or address bar. URLs still open directly.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>One continuous workspace</h3>
+      <p>The shell remains alive while you search, browse, switch tabs, resize panes, and expand pages.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Professional browser chrome</h3>
+      <p>A branded title bar, omnibox, navigation controls, live status, tab strip, and loading feedback.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Built for local development</h3>
+      <p>Open localhost projects directly while continuing to run servers and commands underneath.</p>
+    </td>
+  </tr>
+</table>
+
+---
+
+## Under the surface
 
 ```mermaid
-flowchart LR
+flowchart TB
   K["Keyboard input"] --> Z["zsh line editor"]
-  Z -->|URL detected| P["preview command"]
-  Z -->|shell command| S["real zsh session"]
+  Z -->|recognized shell command| S["real zsh session"]
+  Z -->|search phrase or URL| B["Portal bridge"]
 
-  P --> B["local socket bridge"]
-  B --> W["Electron WebContentsView"]
-  W --> C["Chromium webpage"]
+  A["Address bar"] --> B
+  T["Tab strip"] --> M["Tab manager"]
+  B --> M
 
-  T["xterm.js"] <--> N["node-pty"]
+  M --> W1["WebContentsView: Tab 1"]
+  M --> W2["WebContentsView: Tab 2"]
+  M --> W3["WebContentsView: Tab 3"]
+
+  W1 --> C1["Chromium page"]
+  W2 --> C2["Chromium page"]
+  W3 --> C3["Chromium page"]
+
+  X["xterm.js"] <--> N["node-pty"]
   N <--> S
 
   classDef portal fill:#14213d,stroke:#55c7ff,color:#ffffff;
   classDef shell fill:#14281f,stroke:#62e6a7,color:#ffffff;
   classDef web fill:#28183b,stroke:#b279ff,color:#ffffff;
 
-  class P,B portal;
-  class Z,S,T,N shell;
-  class W,C web;
+  class A,B,T,M portal;
+  class Z,S,X,N shell;
+  class W1,W2,W3,C1,C2,C3 web;
 ```
 
 ### Core technologies
@@ -224,48 +310,51 @@ flowchart LR
 | Layer | Technology |
 |---|---|
 | Desktop application | Electron |
-| Live webpage pane | Chromium through `WebContentsView` |
+| Browser tabs | Multiple `WebContentsView` instances |
+| Web rendering | Chromium |
 | Terminal rendering | xterm.js |
-| Real pseudoterminal | node-pty |
+| Pseudoterminal | node-pty |
 | Shell | macOS `zsh` |
-| Native packaging | electron-builder |
-| Releases | GitHub Actions |
-
-Asher Portal has its own name, product design, interaction model, and visual identity. Electron, Chromium, xterm.js, and node-pty are implementation technologies underneath it.
+| Packaging | electron-builder |
+| Release builds | GitHub Actions |
 
 ---
 
-## ✅ What exists today
+## Current capabilities
 
+- [x] professional custom browser interface
 - [x] real interactive `zsh` terminal
-- [x] live Chromium webpage pane
-- [x] direct domain entry
-- [x] paths, queries, fragments, ports, and full URLs
-- [x] continuous site-to-site navigation
-- [x] localhost and local development support
+- [x] live Chromium webpages
+- [x] Google search from ordinary text
+- [x] direct domains, paths, ports, queries, fragments, and full URLs
+- [x] persistent multi-tab browsing
+- [x] separate history and page state per tab
+- [x] back, forward, and reload controls
 - [x] split-screen and full-page modes
+- [x] localhost and local-development support
 - [x] Apple Silicon release
 - [x] Intel release
 - [x] SHA-256 verified one-line installer
-- [x] automatic GitHub Release builds
+- [x] automated GitHub Release builds
 
-## 🛰️ Direction
+## Direction
 
-Ideas being explored for future releases:
+Ideas being explored for later releases:
 
-- [ ] saved-page offline vault for pages downloaded in advance
-- [ ] history and bookmarks
-- [ ] back and forward navigation
+- [ ] saved-page offline vault
+- [ ] bookmarks and richer history
+- [ ] recently closed tabs
+- [ ] tab restoration between launches
 - [ ] download management
 - [ ] built-in update notifications
 - [ ] additional platforms
 
 > [!IMPORTANT]
-> A browser cannot retrieve a live page it has never downloaded when the computer has no network connection. An offline mode can reopen pages saved in advance, but live feeds, messages, logins, new posts, and remote server data still require a network.
+> A browser cannot retrieve a live page it has never downloaded while the computer has no network connection. An offline feature can reopen pages saved in advance, but live feeds, messages, logins, new posts, and remote server data still require a network.
 
 ---
 
-## 🔐 Privacy, security, and honest limitations
+## Privacy, security, and honest limitations
 
 Asher Portal is **not** a VPN, anonymity network, tracking blocker, or private-browsing guarantee.
 
@@ -290,7 +379,7 @@ Security reports should follow [`SECURITY.md`](SECURITY.md).
 
 ---
 
-## 💻 Requirements
+## Requirements
 
 | Requirement | Supported |
 |---|---|
@@ -303,7 +392,7 @@ Security reports should follow [`SECURITY.md`](SECURITY.md).
 
 ---
 
-## 🛠️ Build from source
+## Build from source
 
 Development requires Node.js 22 or newer.
 
@@ -332,7 +421,7 @@ npm run build:release:x64
 
 ---
 
-## 📡 Releases
+## Releases
 
 Every version tag triggers GitHub Actions to build both Mac architectures and publish:
 
@@ -343,23 +432,21 @@ Asher-Portal-macOS-x64.zip
 Asher-Portal-macOS-x64.zip.sha256
 ```
 
-The one-line installer detects the current architecture and verifies the matching checksum automatically.
+The installer detects the current architecture and verifies the matching checksum automatically.
 
 [**View all releases →**](https://github.com/ashermenachem/asher-portal/releases)
 
 ---
 
-## 🗑️ Uninstall
+## Uninstall
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ashermenachem/asher-portal/main/uninstall.sh | bash
 ```
 
-This removes the application, command launcher, and Asher Portal application data.
-
 ---
 
-## 📜 License
+## License
 
 > [!IMPORTANT]
 > **Asher Portal is source-available. It is not open source.**
@@ -376,7 +463,7 @@ Read the complete [Asher Portal Proprietary Source License](LICENSE).
 
 ### Created by **Asher Menachem**
 
-**Enter a URL. Open a portal.**
+**Search it. Open it. Tab it. Keep the terminal.**
 
 <br>
 

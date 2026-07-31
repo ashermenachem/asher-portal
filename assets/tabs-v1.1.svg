@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title description">
+  <title id="title">Asher Portal tabs and search</title>
+  <description id="description">A close view of the redesigned tab strip and address bar in Asher Portal.</description>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080c13"/>
+      <stop offset="1" stop-color="#10091a"/>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset=".5" stop-color="#4f8cff"/>
+      <stop offset="1" stop-color="#9b6cff"/>
+    </linearGradient>
+
+    <linearGradient id="active" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f2d45"/>
+      <stop offset="1" stop-color="#121b2b"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="26" stdDeviation="34" flood-color="#000" flood-opacity=".68"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="760" fill="url(#bg)"/>
+  <circle cx="220" cy="80" r="360" fill="#2478ff" opacity=".09"/>
+  <circle cx="1440" cy="680" r="420" fill="#9147ff" opacity=".08"/>
+
+  <text x="120" y="82" fill="#f4f7fc" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="31" font-weight="800">Real tabs. One persistent shell.</text>
+  <text x="120" y="118" fill="#8998ae" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="17">Search, switch, close, and return without losing the state of any page.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="120" y="160" width="1360" height="490" rx="28" fill="#080b11" stroke="#303c54" stroke-width="2"/>
+  </g>
+
+  <rect x="120" y="160" width="1360" height="92" rx="28" fill="#101722"/>
+  <circle cx="154" cy="191" r="8" fill="#ff5f57"/>
+  <circle cx="181" cy="191" r="8" fill="#febc2e"/>
+  <circle cx="208" cy="191" r="8" fill="#28c840"/>
+
+  <rect x="280" y="174" width="810" height="44" rx="14" fill="#111a29" stroke="#34455e"/>
+  <text x="310" y="202" fill="#dfe7f3" font-family="SFMono-Regular,Menlo,monospace" font-size="14">Search the web or enter a URL</text>
+  <rect x="1008" y="184" width="64" height="24" rx="12" fill="#10251f" stroke="#285947"/>
+  <circle cx="1024" cy="196" r="4" fill="#42d9a0"/>
+  <text x="1036" y="200" fill="#75e8bb" font-family="SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700">LIVE</text>
+
+  <rect x="120" y="252" width="1360" height="52" fill="#090e16"/>
+
+  <rect x="188" y="260" width="270" height="36" rx="11" fill="url(#active)" stroke="#3a4b67"/>
+  <circle cx="210" cy="278" r="5" fill="#42d9a0"/>
+  <text x="226" y="283" fill="#eef3fa" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="13" font-weight="650">Dogs — Google Search</text>
+  <path d="m435 272 12 12m0-12-12 12" stroke="#738198" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="205" y="294" width="236" height="2" rx="1" fill="url(#accent)"/>
+
+  <rect x="466" y="260" width="240" height="36" rx="11" fill="#101722" stroke="#202c3e"/>
+  <circle cx="488" cy="278" r="5" fill="#536179"/>
+  <text x="504" y="283" fill="#8f9db1" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="13" font-weight="620">GitHub</text>
+  <path d="m683 272 12 12m0-12-12 12" stroke="#647287" stroke-width="1.8" stroke-linecap="round"/>
+
+  <rect x="714" y="260" width="240" height="36" rx="11" fill="#101722" stroke="#202c3e"/>
+  <circle cx="736" cy="278" r="5" fill="#536179"/>
+  <text x="752" y="283" fill="#8f9db1" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="13" font-weight="620">YouTube</text>
+  <path d="m931 272 12 12m0-12-12 12" stroke="#647287" stroke-width="1.8" stroke-linecap="round"/>
+
+  <rect x="962" y="263" width="31" height="31" rx="9" fill="#101722"/>
+  <path d="M977.5 269v19M968 278.5h19" stroke="#8796ad" stroke-width="1.9" stroke-linecap="round"/>
+
+  <rect x="144" y="326" width="1312" height="300" rx="19" fill="#111926" stroke="#2a3950"/>
+  <text x="190" y="388" fill="#ffffff" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="33" font-weight="800">Three pages. Three histories. One terminal.</text>
+  <text x="190" y="426" fill="#9aa8bd" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="17">Each tab owns its live page, navigation stack, title, loading state, and scroll position.</text>
+
+  <g transform="translate(190 474)">
+    <rect width="350" height="100" rx="18" fill="#121d2d" stroke="#2d4160"/>
+    <text x="25" y="32" fill="#67e8f9" font-family="SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">⌘T</text>
+    <text x="25" y="61" fill="#eff4fb" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="18" font-weight="700">Create a new tab</text>
+    <text x="25" y="84" fill="#8392a9" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="13">The address bar focuses automatically.</text>
+
+    <rect x="375" width="350" height="100" rx="18" fill="#121d2d" stroke="#2d4160"/>
+    <text x="400" y="32" fill="#9b6cff" font-family="SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">⌘W</text>
+    <text x="400" y="61" fill="#eff4fb" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="18" font-weight="700">Close the active tab</text>
+    <text x="400" y="84" fill="#8392a9" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="13">The closest remaining tab becomes active.</text>
+
+    <rect x="750" width="350" height="100" rx="18" fill="#121d2d" stroke="#2d4160"/>
+    <text x="775" y="32" fill="#55d99f" font-family="SFMono-Regular,Menlo,monospace" font-size="11" font-weight="700">⌘L</text>
+    <text x="775" y="61" fill="#eff4fb" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="18" font-weight="700">Search or navigate</text>
+    <text x="775" y="84" fill="#8392a9" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="13">Enter a query, domain, path, or full URL.</text>
+  </g>
+
+  <text x="800" y="706" text-anchor="middle" fill="#b9c5d7" font-family="Inter,ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="18" font-weight="650" letter-spacing=".6">THE BROWSER LAYER ASHER PORTAL WAS BUILT TO HAVE</text>
+</svg>

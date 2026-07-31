@@ -2,59 +2,278 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
-
   <title>Asher Portal</title>
-
   <link
     rel="stylesheet"
     href="./node_modules/@xterm/xterm/css/xterm.css"
   >
-
-  <link
-    rel="stylesheet"
-    href="./styles.css"
-  >
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-  <main id="terminal-panel">
-    <header id="preview-status">
-      <div id="preview-status-text">
-        Live webpage
+  <div id="ambient-background" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-left"></div>
+    <div class="ambient-orb ambient-orb-right"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <div id="app-shell">
+    <header id="app-header">
+      <div id="brand-lockup">
+        <div id="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" role="img">
+            <defs>
+              <linearGradient
+                id="brand-gradient"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+              >
+                <stop offset="0" stop-color="#63e6ff"></stop>
+                <stop offset="0.48" stop-color="#4f8cff"></stop>
+                <stop offset="1" stop-color="#a56cff"></stop>
+              </linearGradient>
+            </defs>
+            <rect
+              x="1"
+              y="1"
+              width="34"
+              height="34"
+              rx="10"
+              fill="#0c121d"
+              stroke="#30405b"
+            ></rect>
+            <path
+              d="M12 10.5 25 18 12 25.5Z"
+              fill="none"
+              stroke="url(#brand-gradient)"
+              stroke-width="2.8"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M10 28h16"
+              stroke="#7d8ba5"
+              stroke-width="2.2"
+              stroke-linecap="round"
+            ></path>
+          </svg>
+        </div>
+
+        <div id="brand-copy">
+          <div id="brand-name">Asher Portal</div>
+          <div id="brand-subtitle">TERMINAL × WEB</div>
+        </div>
       </div>
 
-      <div id="preview-actions">
+      <nav
+        id="navigation-controls"
+        class="no-drag"
+        aria-label="Webpage navigation"
+      >
+        <button
+          id="back-button"
+          class="chrome-button"
+          type="button"
+          title="Back"
+          aria-label="Go back"
+          disabled
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m14.5 6-6 6 6 6"></path>
+          </svg>
+        </button>
+
+        <button
+          id="forward-button"
+          class="chrome-button"
+          type="button"
+          title="Forward"
+          aria-label="Go forward"
+          disabled
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9.5 6 6 6-6 6"></path>
+          </svg>
+        </button>
+
+        <button
+          id="reload-button"
+          class="chrome-button"
+          type="button"
+          title="Reload"
+          aria-label="Reload webpage"
+          disabled
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 8V4l-2 2a8 8 0 1 0 2.3 7"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <form
+        id="address-form"
+        class="no-drag"
+        autocomplete="off"
+      >
+        <div id="address-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M10 13a5 5 0 0 0 7.1.1l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"></path>
+            <path d="M14 11a5 5 0 0 0-7.1-.1l-2 2A5 5 0 0 0 12 20l1.1-1.1"></path>
+          </svg>
+        </div>
+
+        <input
+          id="address-input"
+          type="text"
+          spellcheck="false"
+          autocapitalize="none"
+          autocomplete="off"
+          aria-label="Web address"
+          placeholder="Search the web or enter a URL"
+        >
+
+        <div id="page-mode-indicator" aria-live="polite">
+          <span id="page-mode-dot"></span>
+          <span id="page-mode-label">READY</span>
+        </div>
+      </form>
+
+      <div id="page-actions" class="no-drag">
+        <button
+          id="external-button"
+          class="chrome-button"
+          type="button"
+          title="Open in default browser"
+          aria-label="Open webpage in default browser"
+          disabled
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 5h5v5"></path>
+            <path d="m19 5-9 9"></path>
+            <path d="M17 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h5"></path>
+          </svg>
+        </button>
+
         <button
           id="expand-preview-button"
-          class="preview-action-button"
+          class="chrome-button"
           type="button"
           title="Expand webpage"
           aria-label="Expand webpage"
+          disabled
         >
-          ⤢
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 3H3v5"></path>
+            <path d="M16 3h5v5"></path>
+            <path d="M8 21H3v-5"></path>
+            <path d="M16 21h5v-5"></path>
+          </svg>
         </button>
 
         <button
           id="close-preview-button"
-          class="preview-action-button"
+          class="chrome-button chrome-button-danger"
           type="button"
           title="Close webpage"
           aria-label="Close webpage"
+          disabled
         >
-          ×
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m7 7 10 10"></path>
+            <path d="M17 7 7 17"></path>
+          </svg>
         </button>
       </div>
     </header>
 
-    <section id="terminal-container">
-      <div id="terminal"></div>
-    </section>
-  </main>
+
+    <div id="tab-strip" class="no-drag">
+      <div
+        id="tabs-container"
+        role="tablist"
+        aria-label="Browser tabs"
+      ></div>
+
+      <button
+        id="new-tab-button"
+        type="button"
+        title="New tab"
+        aria-label="New tab"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 5v14"></path>
+          <path d="M5 12h14"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="navigation-progress" aria-hidden="true">
+      <div id="navigation-progress-bar"></div>
+    </div>
+
+    <div id="portal-frame" aria-hidden="true">
+      <div id="portal-frame-glow"></div>
+    </div>
+
+    <main id="terminal-panel">
+      <header id="terminal-header">
+        <div id="terminal-title-group">
+          <div id="terminal-glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="m5 7 4 4-4 4"></path>
+              <path d="M11 16h7"></path>
+            </svg>
+          </div>
+
+          <div>
+            <div id="terminal-title">Terminal</div>
+            <div id="terminal-session-label">
+              REAL ZSH SESSION
+            </div>
+          </div>
+        </div>
+
+        <div id="terminal-header-status">
+          <span id="terminal-status-dot"></span>
+          <span id="terminal-status-text">SHELL READY</span>
+        </div>
+      </header>
+
+      <section id="terminal-container">
+        <div id="terminal"></div>
+      </section>
+
+      <footer id="status-bar">
+        <div class="status-cluster">
+          <span class="status-item status-item-accent">
+            <span class="status-mini-dot"></span>
+            LOCAL SESSION
+          </span>
+          <span class="status-divider"></span>
+          <span class="status-item">ZSH</span>
+        </div>
+
+        <div class="status-cluster">
+          <span id="active-page-status" class="status-item">
+            NO PORTAL OPEN
+          </span>
+          <span class="status-divider"></span>
+          <span id="architecture-status" class="status-item">
+            MAC
+          </span>
+          <span class="status-divider"></span>
+          <span id="version-status" class="status-item">
+            v—
+          </span>
+        </div>
+      </footer>
+    </main>
+  </div>
 
   <script src="./node_modules/@xterm/xterm/lib/xterm.js"></script>
   <script src="./node_modules/@xterm/addon-fit/lib/addon-fit.js"></script>

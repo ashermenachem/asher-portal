@@ -16,6 +16,47 @@ contextBridge.exposeInMainWorld("terminalAPI", {
     );
   },
 
+  navigatePreview(value) {
+    ipcRenderer.send(
+      "preview:navigate",
+      value
+    );
+  },
+
+  newTab() {
+    ipcRenderer.send("preview:new-tab");
+  },
+
+  activateTab(tabId) {
+    ipcRenderer.send(
+      "preview:activate-tab",
+      tabId
+    );
+  },
+
+  closeTab(tabId) {
+    ipcRenderer.send(
+      "preview:close-tab",
+      tabId
+    );
+  },
+
+  goBack() {
+    ipcRenderer.send("preview:back");
+  },
+
+  goForward() {
+    ipcRenderer.send("preview:forward");
+  },
+
+  reloadPreview() {
+    ipcRenderer.send("preview:reload");
+  },
+
+  openPreviewExternally() {
+    ipcRenderer.send("preview:open-external");
+  },
+
   closePreview() {
     ipcRenderer.send("preview:close");
   },
@@ -24,6 +65,10 @@ contextBridge.exposeInMainWorld("terminalAPI", {
     ipcRenderer.send(
       "preview:toggle-full-window"
     );
+  },
+
+  getAppInfo() {
+    return ipcRenderer.invoke("app:info");
   },
 
   onData(callback) {
@@ -51,6 +96,24 @@ contextBridge.exposeInMainWorld("terminalAPI", {
     return () => {
       ipcRenderer.removeListener(
         "preview:state",
+        listener
+      );
+    };
+  },
+
+  onFocusAddress(callback) {
+    const listener = () => {
+      callback();
+    };
+
+    ipcRenderer.on(
+      "browser:focus-address",
+      listener
+    );
+
+    return () => {
+      ipcRenderer.removeListener(
+        "browser:focus-address",
         listener
       );
     };
