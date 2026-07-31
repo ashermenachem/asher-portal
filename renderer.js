@@ -69,7 +69,10 @@ window.terminalAPI.onPreviewState((state) => {
       "Live webpage";
   }
 
-  setTimeout(resizeTerminal, 50);
+  setTimeout(() => {
+    resizeTerminal();
+    terminal.focus();
+  }, 50);
 });
 
 terminal.onData((data) => {

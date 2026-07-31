@@ -380,6 +380,33 @@ fi
 
 export ZDOTDIR="$ASHER_PORTAL_ZDOTDIR"
 
+zle -A accept-line _asher_portal_original_accept_line 2>/dev/null || true
+
+_asher_portal_accept_line() {
+  local portal_input="$BUFFER"
+  local portal_url_pattern='^[[:space:]]*(https?://)?(([[:alnum:]-]+\.)+[[:alpha:]]{2,}|localhost|127\.0\.0\.1|0\.0\.0\.0)(:[0-9]+)?([/?#].*)?[[:space:]]*$'
+
+  if [[ "$portal_input" =~ $portal_url_pattern ]]; then
+    local portal_quoted
+    portal_quoted="$(printf '%q' "$portal_input")"
+    BUFFER="preview $portal_quoted"
+  fi
+
+  if zle -l _asher_portal_original_accept_line >/dev/null 2>&1; then
+    zle _asher_portal_original_accept_line
+  else
+    zle .accept-line
+  fi
+}
+
+zle -N accept-line _asher_portal_accept_line
+
+_asher_portal_restore_url_widget() {
+  zle -N accept-line _asher_portal_accept_line 2>/dev/null || true
+}
+
+precmd_functions+=(_asher_portal_restore_url_widget)
+
 if (( $+functions[command_not_found_handler] )); then
   functions[_asher_portal_original_command_not_found_handler]=$functions[command_not_found_handler]
 fi

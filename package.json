@@ -1,6 +1,6 @@
 {
   "name": "asher-portal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A real terminal with live webpages built directly into the same window.",
   "main": "main.js",
   "scripts": {
